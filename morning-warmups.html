@@ -9,19 +9,61 @@
 
 <script>
     
-    "use strict";
-    
+      "use strict";
+
     function isAtLeastEightLong(str) {
             if (str.length >= 8) {
                 return true;
             } else {
                 return false;
             }
-            return str.length >= 8;
+             return str.length >= 8;
     }
 
     console.log(isAtLeastEightLong("cat")); // false
     console.log(isAtLeastEightLong("michael")); // true
+
+
+      // Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two.
+      //     Examples:
+      // twoMoreAwayFromZero(2) will return 4
+      // twoMoreAwayFromZero(0) will return 2
+      // twoMoreAwayFromZero(0.5) will return 2.5
+      // twoMoreAwayFromZero(-2) will return -4
+      // twoMoreAwayFromZero(-3.5) will return -5.5
+
+   "use strict";
+
+      function twoMoreAwayFromZero(num) {
+          if (num >= 0) {
+              return num + 2;
+          } else {
+              return num - 2;
+          }
+      }
+
+      console.log(twoMoreAwayFromZero(2)); //will return 4
+      console.log(twoMoreAwayFromZero(0)); //will return 2
+      console.log(twoMoreAwayFromZero(0.5)); //will return 2.5
+      console.log(twoMoreAwayFromZero(-2)); //will return -4
+      console.log(twoMoreAwayFromZero(-3.5)); //will return -5.5
+
+
+      // Write a function that returns the quotient of two numbers (Assume the arguments will be numbers)
+    "use strict";
+
+    function quotient(num1, num2) {
+            return num1 / num2;
+        }
+
+      console.log(quotient())
+      console.log(quotient())
+      console.log(quotient())
+      console.log(quotient())
+
+
+
+
 
 </script>
 </body>

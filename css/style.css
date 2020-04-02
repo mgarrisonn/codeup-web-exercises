@@ -1,4 +1,45 @@
-.fancy-header
-{
-    color: purple;
+.fancy-header {
+    color: #00bfff;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1, h2 {
+    color: #00bfff;
+    text-decoration: underline;
+}
+
+body {
+    color: #00bfff;
+}
+
+body {
+    background-color: #d2b48c;
+}
+
+body {
+    background-image: url("../img/sand.jpg");
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;;
+}
+
+ol {
+    list-style: upper-alpha ;
+}
+
+ul {
+    list-style: square;
+}
+
+th, td {
+    text-align: center;
+    padding: 1em
+}
+
+a {
+    color: #00bfff;
 }
