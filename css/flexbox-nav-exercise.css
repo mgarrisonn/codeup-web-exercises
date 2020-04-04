@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+/*.top-nav {*/
+/*    */
+/*}*/
+.nav {
+    background: lightgrey;
+}
+.nav-item {
+    font-weight: bold;
+    font-family: 'Work Sans', sans-serif;
+}
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    display: inline-block;
+    padding: 1em;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 1em;
+}
+nav a:hover {
+    color: blue;
+}
+.logo-div {
+    margin: auto;
+    font-size: 2em;
+    padding: .2em;
+    font-family: 'Montserrat', sans-serif;
+}
