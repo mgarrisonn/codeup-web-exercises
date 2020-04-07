@@ -89,7 +89,21 @@
     console.log(isEvenNum(77), false);
 
 
+      // Write a function, returnEvenOddMessage, that takes in a number input and returns the string "is even" if the number input is even and returns the string "is odd" if the number input is odd.
 
+    "use strict"
+
+    function returnEvenOddMessage(num) {
+        if (isEvenNum(num)){
+            return "is even";
+        } else {
+            return "is odd";
+        }
+    }
+
+      console.log(isEvenNum(4), "is even");
+      console.log(isEvenNum(77), "is odd");
+      console.log(isEvenNum(0), "is even");
 
 
 

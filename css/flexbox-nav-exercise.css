@@ -2,13 +2,15 @@
     box-sizing: border-box;
 }
 body {
-    margin: 0;
+    margin: auto;
 }
 /*.top-nav {*/
 /*    */
 /*}*/
 .nav {
     background: lightgrey;
+    align-items: center;
+    height: 65px;
 }
 .nav-item {
     font-weight: bold;
@@ -18,7 +20,7 @@ ul {
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: auto;
 }
 a {
     display: inline-block;
@@ -34,8 +36,9 @@ nav a:hover {
     color: blue;
 }
 .logo-div {
-    margin: auto;
     font-size: 2em;
     padding: .2em;
     font-family: 'Montserrat', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
 }

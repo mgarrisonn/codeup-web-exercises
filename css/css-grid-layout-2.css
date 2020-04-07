@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+            "header header header"
+            "nav article article"
+            "nav ads ads"
+            "footer footer footer";
+    grid-template-columns: 280px 1fr 220px;
+    grid-template-rows: 80px 1fr 90px;
+    grid-gap: 10px;
+    height: 100vh;
+}
+header, article, nav, div, footer {
+    padding: 20px;
+    background: lime;
+}
+.head {
+    grid-area: header;
+}
+.nav {
+    grid-area: nav;
+}
+.article {
+    grid-area: article;
+}
+.ad {
+    grid-area: ads;
+}
+.foot {
+    grid-area: footer;
+}
