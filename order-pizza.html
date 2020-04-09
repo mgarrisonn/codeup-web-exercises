@@ -2,9 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Ordering Pizza</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-$END$
+<nav class="navbar flex-row navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Pizza world</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Order online <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Menu <span class="sr-only">(current)</span></a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="submit">Search stores near you!</button>
+            </form>
+            <li class="d-flex justify-content-end">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-user"></i>
+                Sign up
+            </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Welcome to Pizza World!</h1>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<h2>Build Your Own Pizza!</h2>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" ><span class="badge badge-pill badge-dark">1</span>Size and Crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><span class="badge badge-pill badge-dark">2</span>Cheese and Sauce</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><span class="badge badge-pill badge-dark">3</span>Toppings</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div>
+
+<div class="card" style="width: 60em;">
+    <div class="card-header">Hand Tossed</div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste</li>
+        <li class="list-group-item" class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="small" value="option2">
+            <label class="form-check-label" for="small">
+                Small (10")</label>
+        </li>
+        <li class="list-group-item" class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="medium" value="option2">
+            <label class="form-check-label" for="medium">
+                Medium (12")</label></li>
+    </ul>
+</div>
+<div class="card" style="width: 60em;">
+    <div class="card-header">
+        Crispy Thin
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">This enough for optimum crispy to crunchy ratio</li>
+        <li class="list-group-item"class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="medium2" value="option2">
+            <label class="form-check-label" for="medium2">
+                Medium (12")</label> </li>
+        <li class="list-group-item" class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="large" value="option2">
+            <label class="form-check-label" for="large">
+                Large (14")</label></li>
+    </ul>
+    <a href="#" class="btn btn-primary">Next Step</a>
+
+</div>
 </body>
 </html>
