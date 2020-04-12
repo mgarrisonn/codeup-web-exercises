@@ -1,48 +1,51 @@
 body {
     margin: 0;
     display: grid;
-    grid-template-areas:
-        "one one one one"
-        "two three four four"
-        "two five five six"
-        "two seven eight nine"
-        "two ten ten ten";
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows:  repeat(5, 1fr);
     grid-gap: 10px;
     height: 100vh;
+
 }
 header, article, nav, div, footer {
     padding: 20px;
     background: orange;
 }
-.one {
-    grid-area: one;
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 11px;
+    grid-row-gap: 10px;
 }
-#two {
-    grid-area: two;
+
+.one {
+    grid-area: 1 / 1 / 2 / 5;
+}
+.two {
+    grid-area: 2 / 1 / 6 / 2;
 }
 .three {
-    grid-area: three;
+    grid-area: 2 / 2 / 3 / 3;
 }
 .four {
-    grid-area: four;
+    grid-area: 2 / 3 / 3 / 5;
 }
-.five{
-    grid-area: five;
+.five {
+    grid-area: 3 / 2 / 4 / 4;
 }
 .six {
-    grid-area: six;
+    grid-area: 3 / 4 / 4 / 5;
 }
 .seven {
-    grid-area: seven;
+    grid-area: 4 / 2 / 5 / 3;
 }
 .eight {
-    grid-area: eight;
+    grid-area: 4 / 3 / 5 / 4;
 }
 .nine {
-    grid-area: nine;
+    grid-area: 4 / 4 / 5 / 5;
 }
 .ten {
-    grid-area: ten;
+    grid-area: 5 / 2 / 6 / 5;
 }
