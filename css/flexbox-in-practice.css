@@ -4,6 +4,9 @@
 }
 body {
     margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    min-height: 100vh;
+    background: orange;
 }
 nav {
     background: #333333;
@@ -12,24 +15,30 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex; /* made unordered list a flex container */
 }
 nav a {
     text-decoration: none;
     color: white;
     font-family: Verdana;
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
 }
 nav a:hover {
     background: black;
 }
+nav ul li:nth-child(4) {
+    /*
+        this allows the last flex item to be right justified
+        by filling remaining space to the left of the flex item with margin
+    */
+    margin-left: auto;
+}
+
 
 
 /* CARDS */
 
-body {
-    margin: 0;
-    font-family: Roboto;
-    background: orange;
-}
 h1, h2, h3 {
     padding: 0;
     margin: 0;
@@ -48,6 +57,11 @@ hr {
     background: white;
     width: 250px;
     height: 350px;
+    /* the following declarations make the card a flex container and justify and align its flex items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 img {
     border-radius: 120px;
@@ -55,6 +69,12 @@ img {
 }
 i {
     color: grey;
+}
+.icons {
+    /* the following declarations control the spacing between the social media icons */
+    width: 160px;
+    display: flex;
+    justify-content: space-evenly;
 }
 .text-section {
     position: relative;
@@ -64,21 +84,29 @@ i {
     font-size: 2.2em;
 }
 
+main {
+    width: 60%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1em;
+    background: darkorange;
+    min-height: 100vh;
+    /*
+        the following declarations control the layout for all the cards,
+        creating a responsive layout
+    */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+}
+
+
 
 /* FOOTER */
 
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    font-family: "Nunito Sans", SansSerif;
-    min-height: 100vh; /* to keep footer at the bottom of the page */
-}
 footer {
     background: black;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 .container {
@@ -92,6 +120,7 @@ h1 {
 }
 footer h1 {
     margin: 0;
+    text-align: left;
     font-weight: bolder;
 }
 h5 {
@@ -112,16 +141,48 @@ footer ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-direction: column;
 }
 footer .container {
+    /* here we make the footer a flex container in a column layout to evenly space the sections of the footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 4em 0;
     height: 30em;
+}
+.top-footer {
+    /* here we make the top footer section a flex container to space out the multiple lists of links */
+    display: flex;
+    justify-content: space-between;
 }
 .icon-wrapper {
     border: 2px solid grey;
     border-radius: 2.4em;
     height: 2.4em;
     width: 2.4em;
+    /* here we make the icon wrappers into flex containers to center the icons */
+    display: flex;
+}
+.icon-wrapper i {
+    /* here we center the icons inside their flex container wrappers */
+    margin: auto;
+}
+.logo-div {
+    /* here we set a larger size along the main axis and push the div a bit up for aesthetics */
+    flex-basis: 25%;
+    position: relative;
+    bottom: 5px;
+}
+.social-media-links {
+    /* here we make the div containing the social media links into a flex container to orient them in a row */
+    display: flex;
+}
+footer .bottom-footer {
+    /* here we ensure the social media link container is horizontally centered by setting its parent to be a flex container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 footer .top-footer a {
     text-transform: uppercase;
