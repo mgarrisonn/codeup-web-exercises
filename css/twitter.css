@@ -22,15 +22,11 @@ header {
     min-height: 300px;
     padding-top: 275px;
 }
+.container {
+    margin-top: 2em;
+}
 a {
     color: var(--link-color);
-    display: inline-block;
-    padding: 1.5em;
-    text-align: center;
-}
-.nav-item{
-    display: inline-block;
-    padding: 1.5em;
 }
 .top-nav {
     background: var(--light-bg);
@@ -42,16 +38,18 @@ a {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    overflow: hidden;
 }
 .nav-link {
     color: var(--main-link-color);
     font-weight: bold;
     text-decoration: none;
-    text-align: right;
 }
 .nav-link:hover {
     color: var(--link-color);
+}
+.nav-item {
+    display: inline-block;
+    padding: 1.5em;
 }
 .profile {
     background: var(--light-bg);
@@ -59,61 +57,25 @@ a {
 }
 .profile-image {
     position: absolute;
-    top: 250px;
+    top: 243px;
 }
-.profile-items{
-    padding-top: 0;
-    list-style: none;
-}
-
-.profile-entry{
-    margin: .5em;
-}
-.profile-form{
-   /*padding-top: 1em;*/
+.profile-form {
     float: right;
     line-height: 80px;
 }
-.profile-details{
-    width: calc(25% - 32px);
-    margin:0 .5em;
-    float: left;
+.profile-items {
+    list-style: none;
+    padding: 0;
 }
-.timeline {
-    width: calc(50% - 32px);
-    margin:0 .5em ;
-    float: left;
-}
-.who-to-follow{
-    width: calc(25% - 1em);
-    margin:0 .5em;
-    float: left;
-}
-.container{
-    margin-top: 2em;
-}
-.media{
-    width: 100%;
-    background-color: var(--light-bg);
-    border-bottom: 1px solid var(--separator-color);
-    padding: .5em;
-    overflow: auto;
-}
-.media-image{
-    width: 50px;
-    margin-top: 1.33em;
-    float: left;
-}
-.media-body{
-    width: calc(100% - 50px);
-    float: left;
+.profile-entry {
+    margin: .5em;
 }
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
     background: var(--light-bg);
     font-weight: bold;
-    padding: 6px;
+    padding: 8px;
     border-radius: 5px;
 }
 .btn-large {
@@ -129,4 +91,33 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+.profile-details,
+.timeline,
+.who-to-follow {
+    float: left;
+    margin: 0 .5em;
+}
+.profile-details,
+.who-to-follow {
+    width: calc(25% - 1em);
+}
+.timeline {
+    width: calc(50% - 1em);
+}
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: .5em;
+    overflow: auto;
+}
+.media-image {
+    width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+.media-body {
+    width: calc(100% - 50px);
+    float: left;
 }

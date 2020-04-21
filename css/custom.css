@@ -9,7 +9,7 @@ h1 {
     text-align: center;
     background-color: #d3d3d3;
     position: absolute;
-    /*overflow: auto;*/
+    overflow: auto;
 }
 .jumbotron {
     display: flex;
