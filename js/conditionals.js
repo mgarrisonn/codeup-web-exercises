@@ -1,3 +1,4 @@
+
 "use strict";
 
 /* ########################################################################## */
@@ -19,6 +20,16 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+function analyzeColor(color) {
+    if (color === 'blue') {
+        return "blue is the color of the sky"
+    } else if (color === 'red') {
+        return "strawberries are red"
+    } else {
+        return "I don't know anything about cyan " + color;
+    }
+}
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -32,11 +43,26 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+function analyzeColorSwitch(color) {
+    switch (color) {
+        case "blue":
+            return "blue is the color of the sky";
+            break;
+        case "red":
+            return "starwberries are red";
+            break;
+        default:
+            return "I don't know anything about " + color;
+            break;
+    }
+}
+console.log(analyzeColorSwitch(randomColor));
 
 /**
  * TODO:
@@ -44,6 +70,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+var userColor = prompt("Enter a color").toLowerCase();
+
+alert(analyzeColorSwitch(userColor));
 
 /* ########################################################################## */
 
@@ -67,6 +96,28 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
+function calculateTotal(luckyNum, bill) {
+    if (luckyNum === 0) {
+        return bill;
+    } else if (luckyNum === 1) {
+        return (bill * .90);
+    } else if (luckyNum === 2) {
+        return (bill * .75);
+    } else if (luckyNum === 3) {
+        return (bill * .65);
+    } else if (luckyNum === 4) {
+        return (bill * .50);
+    } else {
+        return 0;
+    }
+}
+// console.log(calculateTotal(0, 100));
+// console.log(calculateTotal(1, 100));
+// console.log(calculateTotal(2, 100));
+// console.log(calculateTotal(3, 100));
+// console.log(calculateTotal(4, 100));
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -75,7 +126,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+var userBill = parseFloat(prompt("What was your bill?"));
+alert("your lucky number is " + luckyNumber + ". Before discount , your bill was, $" + userBill.toFixed(2) + ". After discount, yur final total is: $" + calculateTotal(luckyNumber, userBill).toFixed(2));
+
 
 /**
  * TODO:
@@ -93,3 +148,35 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+function evenOrOdd(num) {
+    return (num % 2 === 0) ? num + " is an even number": num + " is an odd number";
+}
+
+function plusOneHundo(num) {
+    return num + 100;
+}
+
+function positiveOrNegative(num) {
+    if (num > 0) {
+        return num + " is a positive number"
+    } else {
+        return num + " is a negative number"
+    }
+}
+
+function numberGame() {
+    if (confirm("Would you like to play a game with me?")) {
+        var userNum = parseFloat(prompt("Input a number"));
+        if (!isNaN(userNum)) {
+            alert(evenOrOdd(userNum));
+            alert(userNum + " plus 100 is equal to: " + plusOneHundo(userNum));
+            alert(positiveOrNegative(userNum))
+        } else {
+            alert("You're no fun.");
+        }
+    } else {
+        alert("You're no fun.");
+    }
+}
+
+numberGame();
