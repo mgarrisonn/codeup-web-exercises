@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 //For Loops #2
 // function showMultiplicationTable(num) {
 //     for (var i = 1; i <= 10; i++) {
