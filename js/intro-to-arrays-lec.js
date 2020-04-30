@@ -229,3 +229,20 @@ daysOfTheWeek.forEach(function(day) {
 favoriteFoods.forEach(function(food) {
    console.log(food);
 });
+
+
+//How to pull certain values from an array into a new one
+
+var originalArray = [1,2,'dog', 'cat', 3, 'mouse', '4'];
+
+function separateNumValues(arr) {
+    var numberArray = [];
+    arr.forEach(function(element) {
+        if(typeof(element) === "number") {
+            numberArray.push(element);
+        }
+    });
+    return numberArray;
+}
+
+console.log(separateNumValues(originalArray));
