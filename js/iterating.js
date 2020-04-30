@@ -12,7 +12,7 @@ var names = ['michael', 'trey', 'jason', 'kevin'];
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-console.log(names);
+console.log(names.length);
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
@@ -55,6 +55,9 @@ var arr1 = [1,2,3,4,5];
 function returnFirst(arr) {
     return arr[arr.length -5];
 }
+// function returnFirst(arr){
+//     return arr[0];
+// }
 console.log(returnFirst(arr1));
 
 //Second
