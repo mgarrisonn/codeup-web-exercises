@@ -31,13 +31,13 @@
     console.log(planets);
 
     //solution
-    var theSun = planets.shift();
+    planets.shift();
 
     console.log('Removing "The Sun" from the beginning of the planets array.');
     console.log(planets);
 
     //solution
-    var pluto = planets.pop();
+    planets.pop();
 
     console.log('Removing "Pluto" from the end of the planets array.');
     console.log(planets);
