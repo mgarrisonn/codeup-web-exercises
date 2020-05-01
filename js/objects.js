@@ -12,6 +12,14 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    var person = {
+        firstName: "Rick",
+        lastName: "Sanchez"
+    };
+
+    console.log(person.firstName);
+    console.log(person.lastName);
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +29,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    person.sayHello = function() {
+        return "Hello from " + this.firstName + " " + this.lastName + "!";
+    };
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -36,11 +49,21 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function(shopper) {
+       var discountedPrice = shopper.amount;
+       var discount = 0;
+       if(shopper.amount > 200) {
+           discount = 12;
+           discountedPrice = 0.88 * shopper.amount;
+       }
+       console.log("Shopper: " + shopper.name + " amount: $" + shopper.amount + " discount: " + discount + "% $" + discountedPrice);
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
