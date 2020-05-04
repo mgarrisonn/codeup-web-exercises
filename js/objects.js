@@ -13,8 +13,8 @@
      */
 
     var person = {
-        firstName: "Rick",
-        lastName: "Sanchez"
+        firstName: "Michael",
+        lastName: "Garrison"
     };
 
     console.log(person.firstName);
@@ -55,15 +55,24 @@
         {name: 'George', amount: 320}
     ];
 
-    shoppers.forEach(function(shopper) {
-       var discountedPrice = shopper.amount;
-       var discount = 0;
-       if(shopper.amount > 200) {
-           discount = 12;
-           discountedPrice = 0.88 * shopper.amount;
-       }
-       console.log("Shopper: " + shopper.name + " amount: $" + shopper.amount + " discount: " + discount + "% $" + discountedPrice);
-    });
+    // shoppers.forEach(function(shopper) {
+    //    var discountedPrice = shopper.amount;
+    //    var discount = 0;
+    //    if(shopper.amount > 200) {
+    //        discount = 12;
+    //        discountedPrice = 0.88 * shopper.amount;
+    //    }
+    //    console.log("Shopper: " + shopper.name + " amount: $" + shopper.amount + " discount: " + discount + "% $" + discountedPrice);
+    // });
+    function discountChecker(shoppers) {
+        shoppers.forEach(function(shopper) {
+            if (shopper.amount >= 200) {
+                console.log(shopper.name + " has spent $" + shopper.amount.toFixed(2) + " today. They qualify for a 12% discount, and therefore a final total of $" + (shopper.amount - (shopper.amount * .12)).toFixed(2) + "." )
+            } else {
+                console.log(shopper.name + ", thank you for shopping with us today. your final total today is: $" + shopper.amount.toFixed(2) + ". If you added $" * (200 - shopper.amount).toFixed(2) + ", you could save 12% on your purchase today. :)");
+            }
+        })
+    }
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -116,6 +125,8 @@
         }
     ];
 
+
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -140,18 +151,18 @@
      *      ---
      *      ...
      */
+    function loggingBooks(books) {
+        for (var x = 0; x < books.length; x++) {
+            console.log("Book #" + (x + 1) + "\n" + "Book title: " + books[x].title + "\n" + "Book Author: " + books[x].author.firstName + " " + books[x].author.lastName);
+        }
+        // books.forEach(function(books, index) {
+        //         console.log("Book # " + (index + 1));
+        //         showBookInfo(book);
+        //         console.log('---');
+        //     });
+    }
 
-    books.push( createBook("The Old Man and The Sea", "Ernest Hemingway"));
-    books.push( createBook("Harry Potter and the Sorcerers Stone", "J.K. Rowling"));
-    books.push( createbook("The Lord of the Rings", "J.R.R. Tolkien"));
-    books.push( createbook("The Hobbit", "J.R.R. Tolkien"));
-    books.push( createbook("TheCat in the Hat", "Dr. Seuss"));
-
-    books.forEach(function(books, index) {
-        console.log("Book # " + (index + 1));
-        showBookInfo(book);
-        console.log('---');
-    });
+    loggingBooks(books);
 
 
     /**
@@ -164,5 +175,25 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    // books.push( createBook("The Old Man and The Sea", "Ernest Hemingway"));
+    // books.push( createBook("Harry Potter and the Sorcerers Stone", "J.K. Rowling"));
+    // books.push( createbook("The Lord of the Rings", "J.R.R. Tolkien"));
+    // books.push( createbook("The Hobbit", "J.R.R. Tolkien"));
+    // books.push( createbook("TheCat in the Hat", "Dr. Seuss"));
+    //
 
+    function createBook(title,fName, lName, arr) {
+        var newBook = {
+            title: title,
+            author: {
+                firsName: fName,
+                lastName: lName
+            }
+        };
+        arr.push(newBook);
+        return arr;
+    }
+
+    createBook("Harry Potter", "John", "Jacob", books);
+    loggingBooks(books);
 })();
