@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Object</title>
+</head>
+<body>
+    <h1>Math Object</h1>
+
+    <script>
+        //will never get the number 1 from Math.random
+        //generates random number between 0 and 1
+        console.log(Math.random());
+        //generates random number between 0 and 1 mulitplied by 100
+        console.log(Math.random() * (100));
+        //rounds down with Math.floor
+        console.log(Math.floor(Math.random() * (100)));
+        //inclusive maximum with the + 1
+        console.log(Math.floor(Math.random() * (100 + 1)));
+        //will not go below 50 but is possible to get 0
+        console.log(Math.floor((Math.random() * (100-50)) + 50));
+        //will always round up Math.ceiling
+        console.log(Math.ceil((Math.random() * (100 - 50)) + 50));
+        //5
+        console.log(Math.ceil(4.1));
+        //4
+        console.log(Math.floor(4.9));
+        //5
+        console.log(Math.round(4.5));
+        //4
+        console.log(Math.round(4.2));
+        //Exponents
+        console.log(Math.pow(4, 2));
+        //New way to do exponents this year
+        console.log(4 ** 2);
+        //Square root
+        console.log(Math.sqrt(16));
+        //cube root
+        console.log(Math.cbrt(16));
+        //The Math.E property represents the base of natural logarithms, e, approximately 2.718.
+        console.log(Math.e());
+        //The Math.PI property represents the ratio of the circumference of a circle to its diameter, approximately 3.14159.
+        console.log(Math.PI());
+
+
+    </script>
+
+</body>
+</html>
