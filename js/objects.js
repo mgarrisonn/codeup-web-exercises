@@ -78,6 +78,44 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: "The Old Man and the Sea",
+            author: {
+                firstName: "Ernest",
+                lastName: "Hemingway"
+            }
+        },
+        {
+            title: "Harry Potter and the Sorcerers Stone",
+            author: {
+                firstName: "J.K.",
+                lastName: "Rowling"
+            }
+        },
+        {
+            title: "The Lord of The Rings",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien"
+            }
+        },
+        {
+            title: "The Hobbit",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien"
+            }
+        },
+        {
+            title: "The Cat in the Hat",
+            author: {
+                firstName: "Dr.",
+                lastName: "Seuss"
+            }
+        }
+    ];
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -102,6 +140,19 @@
      *      ---
      *      ...
      */
+
+    books.push( createBook("The Old Man and The Sea", "Ernest Hemingway"));
+    books.push( createBook("Harry Potter and the Sorcerers Stone", "J.K. Rowling"));
+    books.push( createbook("The Lord of the Rings", "J.R.R. Tolkien"));
+    books.push( createbook("The Hobbit", "J.R.R. Tolkien"));
+    books.push( createbook("TheCat in the Hat", "Dr. Seuss"));
+
+    books.forEach(function(books, index) {
+        console.log("Book # " + (index + 1));
+        showBookInfo(book);
+        console.log('---');
+    });
+
 
     /**
      * Bonus:
