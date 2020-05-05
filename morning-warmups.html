@@ -159,6 +159,32 @@
         }
     }
 
+      // Create a function that takes in a array input and returns true if one of the elements is a number that matches the number of total elements in the array.
+      // Example input: [1]
+      // Example output: true
+      // Example input: ['bob', 3, false]
+      // Example output: true
+      // Example input: [{'a': 'hello'}, 10, true]
+      // Example output: false
+      // Example input: [5, {'a': 'hello'}, 30, true, null]
+      // Example output: true
+
+    function checkForLengthInArray(arr) {
+        for (var i = 0;i < arr.length; i+=1) {
+            if (arr[1] === arr.length) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    console.log(checkForLengthInArray([1]));//true
+    console.log(checkForLengthInArray(['bob', 3, false]));//true
+    console.log(checkForLengthInArray([{'a': 'hello'}, 10, true]));//false
+    console.log(checkForLengthInArray([5, {'a': 'hello'}, 30, true, null]));//true
+
+
+
 </script>
 </body>
 </html>
