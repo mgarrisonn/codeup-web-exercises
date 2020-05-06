@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox-2 Exercise</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        #map {
+            width:100%;
+            height:600px;
+        }
+    </style>
+
+</head>
+<body>
+<!--Create an HTML file called mapbox-2.html-->
+<!--In this file, create a Mapbox map that shows Washington D.C. and with a marker on the Lincoln Memorial.-->
+<!--Add a popup to the Lincoln Memorial marker that contains the text "Lincoln Memorial"-->
+<!--Bonus: when the marker is dragged and released, display the coordinates in an h1-->
+
+    <div id ='map'></div>
+
+    <script src="js/keys.js"></script>
+
+    <h1>Coordinates: <span id="coords"></span></h1>
+
+    <script>
+
+        mapboxgl.accessToken = mapboxKey;
+
+        var map = new mapboxgl.Map({
+            container:'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: {lng: -77.0369, lat: 38.9072},
+        });
+
+        var coords = document.getElementById("coords");
+
+        var marker = new mapboxgl.Marker();
+
+        marker.setLngLat({lng: -77.0502,lat: 38.8893});
+        marker.addTo(map);
+        marker.setDraggable(true);
+
+        var popup = new mapboxgl.Popup();
+
+        popup.setHTML("<h3>Lincoln Memorial</h3>");
+        marker.setPopup(popup);
+        popup.getLngLat(popup);
+
+        marker.on("dragend",function(){
+            coords.innerHTML = marker.getLngLat();
+        });
+
+
+    </script>
+</body>
+</html>
