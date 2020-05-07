@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Lecture</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div id='map'></div>
+
+<!--    avoid pushing work to github with api key -->
+<!--    could be banned from using api if pushed up to github-->
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocode-utils.js"></script>
+    <script>
+
+        mapboxgl.accessToken = mapboxKey;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: [-98.4916, 29.4252],
+            // center: {lng: -98.4916, lat: 29.4252}
+        });
+
+        // map.setZoom(10);
+        // map.setCenter(-74,48);
+
+        //timeout
+
+        // markers
+        // create marker object
+        // set the place where you want the marker to be
+        // add to the map
+        // var marker = new mapboxgl.Marker();
+        //
+        // marker.setLngLat({lng: -98.4916, lat: 29.4252});
+        // marker.addTo(map);
+        // marker.setDraggable(true);
+
+        //other way to do it
+        // marker
+        //     .setLngLat({lng: -98.4916, lat: 29.4252})
+        //     .addTo(map);
+
+        //popups
+        // var popup = new mapboxgl.Popup();
+        //
+        // popup.setHTML("<h3>San Antonio</h3>");
+        // marker.setPopup(popup);
+
+
+        //Events
+        // map.on('click', function() {
+        //     console.log('hello');
+        // });
+        // marker.on('dragend', function() {
+        //     console.log('hello')
+        // });
+
+        // geocode method form mapbox-geocode-utils.js
+        geocode("600 Navarro St #350, San Antonio,TX 78205", mapboxKey).then(function(result){
+            console.log(result);
+            map.setCenter(result);
+            map.setZone(20);
+        });
+
+        //reverse geocode method
+        // reverseGeoCode({lng:,lat:}, mapboxKey).then(function(results){
+        //     console.log(results);
+        // });
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -7,17 +7,34 @@
 // var header = document.getElementById('main-title');
 // console.log(header);
 
+// changes the title on the html page
+// console.log(header.innerHTML = "Hello Ganymede");
+// console.log(header.innerHTML);
+
+// var smallHeading = document.getElementById('small-heading')
+// console.log(smallHeading);
+
 // class - will return an HTMLCollection
 // var cards = document.getElementsByClassName('card');
+
+// cards[0].innerHTML --- targets the first card
+//for (var i = 0; i < cards.length; i += 1) {
+// cards[i].innerHTML = "Howdy";
+// } --- targets all cards
+
 // console.log(cards);
 // console.log(cards[0]);
-// cards.pop(); // ERROR: Array specific method
-// var cardsArr = Array.from(cards); // convert HTMLCollection and NodeList to Array
+// cards.pop(); // ERROR: Array specific method/Only works with an Array
+// var cardsArr = Array.from(cards); // convert HTMLCollection and NodeList to Array --- turning into an array to be able to do more with it
 // cardsArr.pop();
 
 // tag
 //     var sections = document.getElementsByTagName('section');
 //     console.log(sections);
+
+// .getElementById() -- single element node
+// .getElementsByClassName() --- collection of nodes --- targeting classes
+// .getElementsByTagName() --- collection of nodes
 
 
 // ========== Query Selector and Query Selector All
