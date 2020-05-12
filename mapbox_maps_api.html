@@ -18,11 +18,49 @@
 <body>
 
     <div id='map'></div>
-
     <script src="js/keys.js"></script>
-    <script>
+    <script src="js/mapbox-geocode-utils.js"></script>
+<script>
 
-    var map = new
+
+    var restaurants = [
+        {
+            name: '',
+            address: '',
+            message: ''
+        },
+        {
+            name: '',
+            address: '',
+            message: ''
+        },
+        {
+            name: '',
+            address: ,
+            message: ''
+        }
+    ];
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center:[],
+        zoom: 14
+
+    });
+
+    restaurants.forEach(function(restaurant) {
+        geocode(restaurant.address, mapboxKey).then(function(coords) {
+            var popup = new mapboxgl.Popup()
+                .setHTML('<h3>' + restaurant.name + '</h3>' + '<p>' + restaurant.message + '</p>');
+
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coords)
+                .addTo(map)
+                .setPopup(popup)
+        });
+    });
+
     </script>
 
 </body>
