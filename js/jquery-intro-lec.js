@@ -4,7 +4,13 @@
 
 // jQuery is the most widely used JavaScript library on the internet today.
 // jQuery Docs -->  https://api.jquery.com/
-
+// working with uncompressed version of jquery
+// jquery version 2 will be used for class
+// What is JQuery?
+//	- Javascript library that simplifies DOM minipulation
+//	- Place local copy of JQuery above all other js script so the library loads first
+//	- Either download a local copy or use a CDN to use JQuery
+//	- $ -  is how we reference JQuery
 
 /**********************************************
  * 			Adding jQuery to HTML
@@ -34,6 +40,7 @@
 
 // Javascript version: This will wait until all images are loaded on page
 
+//	-
 window.onload = function() {
 	alert( 'The page has finished loading!' );
 }
@@ -42,6 +49,7 @@ window.onload = function() {
 // We use jQuery to select the document
 // we add the event listener 'ready'
 // the event listener will fire before the images are loaded
+// allows us to manipulate the DOM before images are loaded
 $(document).ready(function() {
 	alert( 'The DOM has finished loading!' );
 });
@@ -60,5 +68,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 
 	// INSERT JAVASCRIPT CODE HERE
+	var headings = $('.main-headings');
+	console.log(headings);
 
 });
