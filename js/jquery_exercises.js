@@ -29,21 +29,21 @@
 //     });
 // });
 
-// change background color of h1
+// change background color of h1 with .click
 $('h1').click(function(){
     $(this).css({
        'background-color': 'grey',
     });
 });
 
-// change font size of p to 18px
+// change font size of p to 18px with .dblclick
 $('p').dblclick(function () {
     $(this).css({
        'font-size': '18px',
     });
 });
 
-// change text color to red when hover and back to black
+// change text color to red when hover and back to black with .hover
 $('li').hover(function () {
     $(this).css('color', 'red');
     },
