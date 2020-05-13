@@ -2,17 +2,88 @@
 <html>
 <head>
     <title>Konami Code</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Konami Code</h1>
+<style>
+    h1, h3 {
+        font-family: 'Press Start 2P', cursive;
+        text-align: center;
+        color: #333333;
+    }
+    body {
+        background-color: #3B94D9;
+    }
+    ul, li {
+        font-family: 'Press Start 2P', cursive;
+        color: #3B94D9;
+        text-align: left;
+        align-items: flex-start;
+        list-style: none;
+    }
+    img {
+        height: 350px;
+        width: 550px;
+        float: left;
+    }
+    .on {
+        color: #333333;
+    }
+</style>
 
-<script src="/js/jquery-2.2.4.js"></script>
+    <h1>Konami Code</h1>
+    <hr>
+    <h3>Enter the Konami code to continue.</h3>
+    <br>
+    <img src="img/konami_code.jpg">
+
+        <ul>
+            <li> <span id="1">arrow up</span></li>
+            <li><span id="2">arrow up</span></li>
+            <li><span id="3">arrow down</span></li>
+            <li><span id="4">arrow down</span></li>
+            <li><span id="5">arrow left</span></li>
+            <li><span id="6">arrow right</span></li>
+            <li><span id="7">arrow left</span></li>
+            <li><span id="8">arrow right</span></li>
+            <li><span id="9">b key</span></li>
+            <li><span id="10">a key</span></li>
+            <li><span id="11">Enter</span></li>
+        </ul>
+
+<script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
+    // $(document).keyup(function(event){
+    //     console.log(event.keyCode);
+    //
+    // });
+    $(document).ready(function () {
+        var index = 0,
+            //       [up, up, dn, dn, lt, rt, lt, rt,  b,  a, enter]
+            konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+            // konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA', 'Enter'];
+
+        $(document).keyup(
+            function (e) {
+                $('span').removeClass('on');
+                if (e.keyCode == konamiCode[index++]) {
+                    $('#'+index).addClass('on');
+                    if (index == konamiCode.length) {
+                        // user has entered the full konami code
+                        alert("You have added 30 lives!");
+                        index = 0;
+                    }
+                } else {
+                    index = 0;
+                }
+            });
     });
+
+
+
 </script>
 </body>
 </html>
