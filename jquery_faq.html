@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributes and CSS Exercise</title>
+</head>
+<body>
+<style>
+    body{
+        background-image: url("img/abstract.jpg");
+    }
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+    h1,dt {
+        text-decoration: underline;
+    }
+    h1,dl {
+        background-color: whitesmoke;
+        opacity: 70%;
+    }
+    dt {
+        font-size: 2em;
+    }
+    dl {
+        font-size: 20px;
+    }
+    .invisible {
+        visibility: hidden;
+    }
+    a {
+        background-color: whitesmoke;
+        opacity: 70%;
+    }
+    .highlighter {
+        background-color: yellow;
+    }
+</style>
+<h1>National Park FAQs</h1>
+<a href="/" id="display-dd">Display Info</a>
+<p></p>
+<dl>
+    <dt>Big Bend</dt>
+    <dd class="invisible">Named for the prominent bend in the Rio Grande along the U.S.-Mexico border, this park encompasses a large remote part of the Chihuahuan Desert. </dd>
+    <br>
+    <dt>Grand Canyon</dt>
+    <dd class="invisible">The Grand Canyon, carved by the might Colorado River, is 277 miles long, up to 1 mile deep, and up to 15 miles wide.</dd>
+    <br>
+    <dt>Yellow Stone</dt>
+    <dd class="invisible">Situated on the Yellowstone Caldera, the park has an expansive network of geothermal area including boiling mud pots, vividly coloured hot springs such as Grand Prismatic.</dd>
+    <br>
+    <dt>Badlands</dt>
+    <dd class="invisible">The Badlands are a collection of buttes, pinnacles, spires, and mixed-grass prairies.</dd>
+    <br>
+    <dt>American Samoa</dt>
+    <dd class="invisible">The southernmost national park is on three Samoan islands and protects coral reefs, rainforests, volcanic mountains, and white beaches.</dd>
+    <br>
+    <dt>Biscayne</dt>
+    <dd class="invisible">Located in Biscayne Bay, this park at the north end of the Florida Keys has four interrelated marine ecosystems: mangove forest, the Bay, the Keys, and coral reefs.</dd>
+    <br>
+    <dt>Crater Lake</dt>
+    <dd class="invisible">Crater Lake lies in the caldera of an ancient volcano called Mount Mazama that collapsed 7,700 years ago</dd>
+    <br>
+    <dt>Death Valley</dt>
+    <dd class="invisible">Death Valley is the hottest, lowest, and driest place in the United Sates, with daytime temperatures that have exceeded 130 degrees F.</dd>
+    <br>
+    <dt>Everglades</dt>
+    <dd class="invisible">The Everglades are the largest tropical wilderness in the United Sates.</dd>
+    <br>
+    <dt>Great Smokey Mountains</dt>
+    <dd class="invisible">The Great Smokey Mountains, part of the Appalachian Mountains, span a wide range of elevations, making them home to over 400 vertebrate species, 100 tree species, and 5000 plant species.</dd>
+</dl>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('#display-dd').click(function (event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+            if($('dd')[0].className !== 'invisible'){
+                $(this).text('Hide Info')
+            } else {
+                $(this).text('Display Info')
+            }
+        });
+
+        $('dt').click(function () {
+            $(this).toggleClass('highlighter')
+        })
+    });
+
+</script>
+
+</body>
+</html>
