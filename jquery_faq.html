@@ -23,9 +23,6 @@
     dt {
         font-size: 2em;
     }
-    dl {
-        font-size: 20px;
-    }
     .invisible {
         visibility: hidden;
     }
@@ -36,41 +33,74 @@
     .highlighter {
         background-color: yellow;
     }
+    h3 {
+        background-color: whitesmoke;
+        opacity: 70%;
+        text-align: center;
+    }
+    ul {
+        background-color: whitesmoke;
+        opacity: 70%;
+        list-style: none;
+    }
 </style>
-<h1>National Park FAQs</h1>
+    <h1>National Park FAQs</h1>
 <a href="/" id="display-dd">Display Info</a>
 <p></p>
-<dl>
-    <dt>Big Bend</dt>
-    <dd class="invisible">Named for the prominent bend in the Rio Grande along the U.S.-Mexico border, this park encompasses a large remote part of the Chihuahuan Desert. </dd>
+    <dl>
+        <dt>Big Bend</dt>
+        <dd class="invisible">Named for the prominent bend in the Rio Grande along the U.S.-Mexico border, this park encompasses a large remote part of the Chihuahuan Desert. </dd>
     <br>
-    <dt>Grand Canyon</dt>
-    <dd class="invisible">The Grand Canyon, carved by the might Colorado River, is 277 miles long, up to 1 mile deep, and up to 15 miles wide.</dd>
+        <dt>Grand Canyon</dt>
+        <dd class="invisible">The Grand Canyon, carved by the might Colorado River, is 277 miles long, up to 1 mile deep, and up to 15 miles wide.</dd>
     <br>
-    <dt>Yellow Stone</dt>
-    <dd class="invisible">Situated on the Yellowstone Caldera, the park has an expansive network of geothermal area including boiling mud pots, vividly coloured hot springs such as Grand Prismatic.</dd>
+        <dt>Yellow Stone</dt>
+        <dd class="invisible">Situated on the Yellowstone Caldera, the park has an expansive network of geothermal area including boiling mud pots, vividly coloured hot springs such as Grand Prismatic.</dd>
     <br>
-    <dt>Badlands</dt>
-    <dd class="invisible">The Badlands are a collection of buttes, pinnacles, spires, and mixed-grass prairies.</dd>
+        <dt>Badlands</dt>
+        <dd class="invisible">The Badlands are a collection of buttes, pinnacles, spires, and mixed-grass prairies.</dd>
     <br>
-    <dt>American Samoa</dt>
-    <dd class="invisible">The southernmost national park is on three Samoan islands and protects coral reefs, rainforests, volcanic mountains, and white beaches.</dd>
+        <dt>American Samoa</dt>
+        <dd class="invisible">The southernmost national park is on three Samoan islands and protects coral reefs, rainforests, volcanic mountains, and white beaches.</dd>
     <br>
-    <dt>Biscayne</dt>
-    <dd class="invisible">Located in Biscayne Bay, this park at the north end of the Florida Keys has four interrelated marine ecosystems: mangove forest, the Bay, the Keys, and coral reefs.</dd>
+        <dt>Biscayne</dt>
+        <dd class="invisible">Located in Biscayne Bay, this park at the north end of the Florida Keys has four interrelated marine ecosystems: mangove forest, the Bay, the Keys, and coral reefs.</dd>
     <br>
-    <dt>Crater Lake</dt>
-    <dd class="invisible">Crater Lake lies in the caldera of an ancient volcano called Mount Mazama that collapsed 7,700 years ago</dd>
+        <dt>Crater Lake</dt>
+        <dd class="invisible">Crater Lake lies in the caldera of an ancient volcano called Mount Mazama that collapsed 7,700 years ago</dd>
     <br>
-    <dt>Death Valley</dt>
-    <dd class="invisible">Death Valley is the hottest, lowest, and driest place in the United Sates, with daytime temperatures that have exceeded 130 degrees F.</dd>
+        <dt>Death Valley</dt>
+        <dd class="invisible">Death Valley is the hottest, lowest, and driest place in the United Sates, with daytime temperatures that have exceeded 130 degrees F.</dd>
     <br>
-    <dt>Everglades</dt>
-    <dd class="invisible">The Everglades are the largest tropical wilderness in the United Sates.</dd>
+        <dt>Everglades</dt>
+        <dd class="invisible">The Everglades are the largest tropical wilderness in the United Sates.</dd>
     <br>
-    <dt>Great Smokey Mountains</dt>
-    <dd class="invisible">The Great Smokey Mountains, part of the Appalachian Mountains, span a wide range of elevations, making them home to over 400 vertebrate species, 100 tree species, and 5000 plant species.</dd>
-</dl>
+        <dt>Great Smokey Mountains</dt>
+        <dd class="invisible">The Great Smokey Mountains, part of the Appalachian Mountains, span a wide range of elevations, making them home to over 400 vertebrate species, 100 tree species, and 5000 plant species.</dd>
+    </dl>
+    <br>
+    <button id="highlighter">Highlighter</button>
+    <h3 id="california-park">Yosemite</h3>
+    <ul id="yosemite">
+        <li>Location: Mariposa, California</li>
+        <li>Area of the park: 748,436 acres</li>
+        <li>Established: October 1, 1890</li>
+        <li>Visitors in 2019: 4,009,436</li>
+    </ul>
+    <h3 id="newmexico-park">White Sands</h3>
+    <ul id="white-sands">
+        <li>Location: Alamogordo, New Mexico</li>
+        <li>Area of the park: 145,762 acres</li>
+        <li>Established: January 18, 1933</li>
+        <li>Visitors in 2019: 608,785</li>
+    </ul>
+    <h3 id="arizona-park">Saguaro</h3>
+    <ul id="saguaro">
+        <li>Located: Tucson, Arizona</li>
+        <li>Area of the park: 91,716 acres</li>
+        <li>Established: October 14, 1994</li>
+        <li>Named after the saguaro cactus</li>
+    </ul>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     $(document).ready(function() {
@@ -87,7 +117,14 @@
 
         $('dt').click(function () {
             $(this).toggleClass('highlighter')
-        })
+        });
+
+        $('#highlighter').click(function(){
+            $('ul').each(function(){
+                $(this).children().last().toggleClass('highlighter');
+            });
+
+        });
     });
 
 </script>
