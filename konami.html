@@ -36,8 +36,9 @@
     <hr>
     <h3>Enter the Konami code to continue.</h3>
     <br>
-    <img src="img/konami_code.jpg">
-
+<di class="image"v>
+    <img  src="img/konami_code.jpg" >
+</div>
         <ul>
             <li> <span id="1">arrow up</span></li>
             <li><span id="2">arrow up</span></li>
@@ -55,31 +56,48 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
-
-    // $(document).keyup(function(event){
-    //     console.log(event.keyCode);
-    //
+    // $(document).ready(function () {
+    //     var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    //     var index = 0;
+    //     $(document).keyup(function (event) {
+    //         if (konamiCode.indexOf(event.keyCode) < 0 || event.keyCode !== konamiCode[index]) {
+    //             index = 0;
+    //             return;
+    //         }
+    //         index++;
+    //         if (konamiCode.length === index) {
+    //             index = 0;
+    //             $('body').css({
+    //                 'background-color': 'black',
+    //             })
+    //         }
+    //     });
     // });
     $(document).ready(function () {
         var index = 0,
-            //       [up, up, dn, dn, lt, rt, lt, rt,  b,  a, enter]
             konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
             // konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA', 'Enter'];
 
-        $(document).keyup(
-            function (e) {
+        $(document).keyup(function (event) {
                 $('span').removeClass('on');
-                if (e.keyCode == konamiCode[index++]) {
-                    $('#'+index).addClass('on');
-                    if (index == konamiCode.length) {
-                        // user has entered the full konami code
-                        alert("You have added 30 lives!");
+                if (event.keyCode === konamiCode[index++]) {
+                    $('#' + index).addClass('on');
+                    if (index === konamiCode.length) {
+                        // alert("You have added 30 lives!");
+                        $('body').css({'background-color': 'silver'});
+                        $('li').css({'color': 'silver'});
+                        $('h1').html('Congrats!').css({'color': 'black'});
+                        $('h3').html('You have added 30 lives!').css({'color': 'black'});
+                        $('.image').html('<img src="/img/konami-gif.gif" style="height: 350px; width: 550px">');
                         index = 0;
-                    }
-                } else {
-                    index = 0;
-                }
+                        }
+                    } else {
+                        index = 0;
+                     }
+
             });
+
+
     });
 
 
