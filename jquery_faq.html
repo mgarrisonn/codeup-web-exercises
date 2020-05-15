@@ -119,11 +119,22 @@
             $(this).toggleClass('highlighter')
         });
 
+        // last item of li highlighted when button is clicked
         $('#highlighter').click(function(){
             $('ul').each(function(){
                 $(this).children().last().toggleClass('highlighter');
             });
 
+        });
+
+        // li font bold when ul clicked
+        $('h3').click(function(){
+            $(this).next().children().css('font-weight', 'bold');
+        });
+
+        //
+        $('ul').click(function(){
+           $(this).children().first().css('color', 'blue');
         });
     });
 
