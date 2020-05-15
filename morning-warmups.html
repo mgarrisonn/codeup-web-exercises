@@ -184,18 +184,26 @@
 //     console.log(checkForLengthInArray([5, {'a': 'hello'}, 30, true, null]));//true
 
       // Write a javascript function that takes in a number and returns the number raised to the power of four. If any argument is passed into the function that is not a number, return false.
-      function raisedByPowerOfFour(num) {
-          if (!isNaN(num)) {
-              return num ** 4;
-              // return Math.pow(num, 4);
-          } else {
-              return false;
-          }
-      }
+      // function raisedByPowerOfFour(num) {
+      //     if (!isNaN(num)) {
+      //         return num ** 4;
+      //         // return Math.pow(num, 4);
+      //     } else {
+      //         return false;
+      //     }
+      // }
 
 
+      //Write a JavaScript function that takes in a string and returns the number of words in the string (Numbers within a string should be counted as a word). If the function is ever passed an argument that is not a string, return the number 0
+    function numOfWords(str) {
+        if (typeof str === "string"){
+            return str.split(" ").length;
+        } else {
+            return 0;
+        }
+    }
 
-
+      console.log(numOfWords('an array of words'));
 
 </script>
 </body>
