@@ -2,9 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Blog</title>
 </head>
 <body>
 
+<h1>My Blog</h1>
+
+<table id="webpage">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Categories</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody id="contents"></tbody>
+</table>
+<button></button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+    (function () {
+        "use strict";
+
+        $.get('data/blog.json').done(function(data){
+           var blog_data = "";
+           $.each(data, function(key, value){
+               blog_data += '<tr>';
+               blog_data += '<td>'+value.title+'</td>';
+               blog_data += '<td>'+value.content+'</td>';
+               blog_data += '<td>'+value.categories+'</td>';
+               blog_data += '<td>'+value.date+'</td>';
+               blog_data += '</tr>';
+           });
+           $('#webpage').append(blog_data);
+        });
+
+    })();
+</script>
 </body>
 </html>
