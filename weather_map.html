@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
 </head>
@@ -15,23 +14,22 @@
         height:500px;
     }
 </style>
-<h1 class="bg-primary text-white">Weather App</h1>
+<h1 class="bg-primary text-white pl-3">Weather App</h1>
+<!--<div class="float-right">Current City:</div>-->
+<br>
 <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <div class="pl-5 pr-3">Place</div>
+    <input class="form-control mr-sm-2 max-auto" type="search" placeholder="Find a location" aria-label="Search">
+    <button class="btn  btn-primary " type="submit">Find</button>
 </form>
 <br>
-<div id="cards">
+<div id="weather-info">
     <section class="row">
-        <div class="col-12">
-        </div>
-        <div class="card">
             <div class="card-body">
                 <div class="card" style="width: 13rem;">
-                    <div class="card-header">
-                        Featured
-                    </div>
+                    <div class="card-header">Date</div>
                     <ul class="weather-list list-group list-group-flush">
+                        <li class="list-group-item"></li>
                         <li class="list-group-item">Description:</li>
                         <li class="list-group-item">Humidity:</li>
                         <li class="list-group-item">Wind:</li>
@@ -39,14 +37,11 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="card">
             <div class="card-body">
                 <div class="card" style="width: 13rem;">
-                    <div class="card-header">
-                        Featured
-                    </div>
+                    <div class="card-header">Date</div>
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item"></li>
                         <li class="list-group-item">Description:</li>
                         <li class="list-group-item">Humidity:</li>
                         <li class="list-group-item">Wind:</li>
@@ -54,14 +49,11 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="card">
             <div class="card-body">
                 <div class="card" style="width: 13rem;">
-                    <div class="card-header">
-                        Featured
-                    </div>
+                    <div class="card-header">Date</div>
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item"></li>
                         <li class="list-group-item">Description:</li>
                         <li class="list-group-item">Humidity:</li>
                         <li class="list-group-item">Wind:</li>
@@ -69,39 +61,30 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="card">
             <div class="card-body">
                 <div class="card" style="width: 13rem;">
-                    <div class="card-header">
-                        Featured
-                    </div>
+                    <div class="card-header">Date</div>
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item"></li>
                         <li class="list-group-item">Description:</li>
                         <li class="list-group-item">Humidity:</li>
                         <li class="list-group-item">Wind:</li>
                         <li class="list-group-item">Pressure:</li>
-
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="card">
             <div class="card-body">
                 <div class="card" style="width: 13rem;">
-                    <div class="card-header">
-                        Featured
-                    </div>
+                    <div class="card-header">Date</div>
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item"></li>
                         <li class="list-group-item">Description:</li>
                         <li class="list-group-item">Humidity:</li>
                         <li class="list-group-item">Wind:</li>
                         <li class="list-group-item">Pressure:</li>
-
                     </ul>
                 </div>
             </div>
-        </div>
     </section>
 </div>
 <div id ='map'></div>
@@ -125,15 +108,33 @@
     };
     $.get(weatherUrl, weatherOptions).done(function (data) {
         console.log(data);
-        for (var i = 0; i < data.daily.length; i++) {
-            var html = "<ul class='weather-list'> ";
-            html += "<li class='list-item'>" + new Date(data.daily[0].dt * 1000) + "</li>";
-            html += "<li class='list-item'>" + data.daily[i].temp + "</li>";
-            html += "<li class='list-item'>" + data.daily[i].weather[0].description + "</li>";
-            html += "<li class='list-item'>" + +"</li>";
-            html += "</ul>";
+        console.log(data.daily);
+        console.log(data.daily[0]);
+        // for (var i = 0; i < data.daily.length; i++) {
+        //     var html = "<ul class='weather-list'> ";
+        //     html += "<li class='list-group-item'>" + new Date(data.daily[0].dt * 1000) + "</li>";
+        //     html += "<li class='list-group-item'>" + data.daily[i].temp + "</li>";
+        //     html += "<li class='list-group-item'>" + data.daily[i].weather[0].description + "</li>";
+        //     html += "<li class='list-group-item'>" + +"</li>";
+        //     html += "</ul>";
+        // }
+        // $('.card').append(html);
+      data.daily.forEach(function(day, index){
+        if(index <= 4) {
+            var grabDate = new Date(day.dt * 1000);
+            var html = "<div class='card-body'>";
+            html += "<div class='card-header'>" + "Date: " + (grabDate.getMonth() + 1) + "/" + grabDate.getDate() + "/" + grabDate.getFullYear() + "</div>";
+            html += "<li class='list-group-item'>" + "High/Lows: " + day.temp.max + " &#8457;" + "/" + day.temp.min + " &#8457;" + "</li>";
+            html += "<li class='list-group-item'>" + "Description" + day.weather[0].description + "</li>";
+            html += "<li class='list-group-item'>" + "Humidity: " + day.humidity + "</li>";
+            html += "<li class='list-group-item'>" + "Wind: " + day.wind.speed + "</li>";
+            html += "<li class='list-group-item'>" + "Pressure: " + day.pressure + "</li>";
+
+            html += "</div>";
+            $('#weather-info').append(html);
         }
-        $('#cards').append(html);
+      });
+    });
 
         mapboxgl.accessToken = mapboxKey;
 
@@ -143,16 +144,10 @@
             zoom: 10,
             center: {lng: -98.4936, lat: 29.4241},
         });
-    });
+
 </script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
