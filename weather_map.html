@@ -24,7 +24,7 @@
 </form>
 <br>
 <div id="weather-info">
-    <section class="row">
+    <section class="row invisible " style="display: none">
             <div class="card-body">
                 <div class="card" style="width: 13rem;">
                     <div class="card-header">Date</div>
@@ -37,54 +37,54 @@
                     </ul>
                 </div>
             </div>
-            <div class="card-body">
-                <div class="card" style="width: 13rem;">
-                    <div class="card-header">Date</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item">Description:</li>
-                        <li class="list-group-item">Humidity:</li>
-                        <li class="list-group-item">Wind:</li>
-                        <li class="list-group-item">Pressure:</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card" style="width: 13rem;">
-                    <div class="card-header">Date</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item">Description:</li>
-                        <li class="list-group-item">Humidity:</li>
-                        <li class="list-group-item">Wind:</li>
-                        <li class="list-group-item">Pressure:</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card" style="width: 13rem;">
-                    <div class="card-header">Date</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item">Description:</li>
-                        <li class="list-group-item">Humidity:</li>
-                        <li class="list-group-item">Wind:</li>
-                        <li class="list-group-item">Pressure:</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card" style="width: 13rem;">
-                    <div class="card-header">Date</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item">Description:</li>
-                        <li class="list-group-item">Humidity:</li>
-                        <li class="list-group-item">Wind:</li>
-                        <li class="list-group-item">Pressure:</li>
-                    </ul>
-                </div>
-            </div>
+<!--            <div class="card-body">-->
+<!--                <div class="card" style="width: 13rem;">-->
+<!--                    <div class="card-header">Date</div>-->
+<!--                    <ul class="list-group list-group-flush">-->
+<!--                        <li class="list-group-item"></li>-->
+<!--                        <li class="list-group-item">Description:</li>-->
+<!--                        <li class="list-group-item">Humidity:</li>-->
+<!--                        <li class="list-group-item">Wind:</li>-->
+<!--                        <li class="list-group-item">Pressure:</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--                <div class="card" style="width: 13rem;">-->
+<!--                    <div class="card-header">Date</div>-->
+<!--                    <ul class="list-group list-group-flush">-->
+<!--                        <li class="list-group-item"></li>-->
+<!--                        <li class="list-group-item">Description:</li>-->
+<!--                        <li class="list-group-item">Humidity:</li>-->
+<!--                        <li class="list-group-item">Wind:</li>-->
+<!--                        <li class="list-group-item">Pressure:</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--                <div class="card" style="width: 13rem;">-->
+<!--                    <div class="card-header">Date</div>-->
+<!--                    <ul class="list-group list-group-flush">-->
+<!--                        <li class="list-group-item"></li>-->
+<!--                        <li class="list-group-item">Description:</li>-->
+<!--                        <li class="list-group-item">Humidity:</li>-->
+<!--                        <li class="list-group-item">Wind:</li>-->
+<!--                        <li class="list-group-item">Pressure:</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--                <div class="card" style="width: 13rem;">-->
+<!--                    <div class="card-header">Date</div>-->
+<!--                    <ul class="list-group list-group-flush">-->
+<!--                        <li class="list-group-item"></li>-->
+<!--                        <li class="list-group-item">Description:</li>-->
+<!--                        <li class="list-group-item">Humidity:</li>-->
+<!--                        <li class="list-group-item">Wind:</li>-->
+<!--                        <li class="list-group-item">Pressure:</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
     </section>
 </div>
 <div id ='map'></div>
@@ -118,16 +118,17 @@
         //     html += "<li class='list-group-item'>" + +"</li>";
         //     html += "</ul>";
         // }
-        // $('.card').append(html);
+        // $('#weather-info').append(html);
+
       data.daily.forEach(function(day, index){
         if(index <= 4) {
             var grabDate = new Date(day.dt * 1000);
-            var html = "<div class='card-body'>";
-            html += "<div class='card-header'>" + "Date: " + (grabDate.getMonth() + 1) + "/" + grabDate.getDate() + "/" + grabDate.getFullYear() + "</div>";
+            var html = "<div class='card-body w-25 flex-sm-row float-left'>";
+            html += "<div class='card-header text-center'>" + " " + (grabDate.getMonth() + 1) + "/" + grabDate.getDate() + "/" + grabDate.getFullYear() + "</div>";
             html += "<li class='list-group-item'>" + "High/Lows: " + day.temp.max + " &#8457;" + "/" + day.temp.min + " &#8457;" + "</li>";
-            html += "<li class='list-group-item'>" + "Description" + day.weather[0].description + "</li>";
+            html += "<li class='list-group-item'>" + "Description: " + day.weather[0].description + "</li>";
             html += "<li class='list-group-item'>" + "Humidity: " + day.humidity + "</li>";
-            html += "<li class='list-group-item'>" + "Wind: " + day.wind.speed + "</li>";
+            html += "<li class='list-group-item'>" + "Wind: " + day.wind + "</li>";
             html += "<li class='list-group-item'>" + "Pressure: " + day.pressure + "</li>";
 
             html += "</div>";
