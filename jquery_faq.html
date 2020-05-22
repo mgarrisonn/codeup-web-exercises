@@ -48,13 +48,13 @@
         width: 350px;
         float: right;
     }
-    #switch-one {
+    .switch-one {
         margin-left: 175px;
     }
-    #switch-two {
+    .switch-two {
         margin-left: 300px;
     }
-    #switch-three {
+    .switch-three {
         margin-left: 300px;
     }
 </style>
@@ -117,21 +117,23 @@
     </ul>
 
     <div>
-        <img src="img/yosemite.jpeg">
+        <img src="img/yosemite.jpeg" id="one">
     </div>
     <div>
-        <img src="img/white_sands.jpeg">
+        <img src="img/white_sands.jpeg" id="two">
     </div>
     <div>
-        <img src="img/saguaro.jpeg">
+        <img src="img/saguaro.jpeg" id="three">
     </div>
-    <button id="switch-one">switch</button>
-    <button id="switch-two">switch</button>
-    <button id="switch-three">switch</button>
+    <button class="switch-one">switch</button>
+    <button class="switch-two">switch</button>
+    <button class="switch-three">switch</button>
 
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
+    "use strict";
+
     $(document).ready(function() {
 
         $('#display-dd').click(function (event) {
@@ -164,6 +166,10 @@
         //
         $('ul').click(function(){
            $(this).children().first().css('color', 'blue');
+        });
+
+        $('.switch-one').click(function(){
+           $('this').attr('src', 'img/yosemite.jpg')
         });
     });
 
