@@ -8,202 +8,243 @@
 
 
 <script>
-    
-      "use strict";
 
-//     function isAtLeastEightLong(str) {
-//             if (str.length >= 8) {
-//                 return true;
-//             } else {
-//                 return false;
-//             }
-//              return str.length >= 8;
-//     }
-//
-//     console.log(isAtLeastEightLong("cat")); // false
-//     console.log(isAtLeastEightLong("michael")); // true
-//
-//
-//       // Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two.
-//       //     Examples:
-//       // twoMoreAwayFromZero(2) will return 4
-//       // twoMoreAwayFromZero(0) will return 2
-//       // twoMoreAwayFromZero(0.5) will return 2.5
-//       // twoMoreAwayFromZero(-2) will return -4
-//       // twoMoreAwayFromZero(-3.5) will return -5.5
-//
-//    "use strict";
-//
-//       function twoMoreAwayFromZero(num) {
-//           if (num >= 0) {
-//               return num + 2;
-//           } else {
-//               return num - 2;
-//           }
-//       }
-//
-//       console.log(twoMoreAwayFromZero(2)); //will return 4
-//       console.log(twoMoreAwayFromZero(0)); //will return 2
-//       console.log(twoMoreAwayFromZero(0.5)); //will return 2.5
-//       console.log(twoMoreAwayFromZero(-2)); //will return -4
-//       console.log(twoMoreAwayFromZero(-3.5)); //will return -5.5
-//
-//
-//       // Write a function that returns the quotient of two numbers (Assume the arguments will be numbers)
-//     "use strict";
-//
-//     function quotient(num1, num2) {
-//             return num1 / num2;
-//         }
-//
-//       console.log(quotient())
-//       console.log(quotient())
-//       console.log(quotient())
-//       console.log(quotient())
-//
-//
-//       // Write a JavaScript function that returns the number 7
-//
-//     "use strict"
-//
-//     function theNumberSeven() {
-//         return 7;
-//     }
-//
-//       console.log((theNumberSeven()))
-//
-//       // Write a JavaScript function that takes in an argument, and will return the boolean true if the argument is an even number, and false for all other arguments.
-//
-//     "use strict"
-//
-//     function isEvenNum(parameter){
-//         if(parameter % 2 === 0) {
-//             return true;
-//         } else {
-//             return false;
-//         }
-//         return parameter % 2 === 0;
-//     }
-//
-//     console.log(isEvenNum(4), true);
-//     console.log(isEvenNum(77), false);
-//
-//
-//       // Write a function, returnEvenOddMessage, that takes in a number input and returns the string "is even" if the number input is even and returns the string "is odd" if the number input is odd.
-//
-//     "use strict"
-//
-//     function returnEvenOddMessage(num) {
-//         if (isEvenNum(num)){
-//             return "is even";
-//         } else {
-//             return "is odd";
-//         }
-//     }
-//
-//       console.log(isEvenNum(4), "is even");
-//       console.log(isEvenNum(77), "is odd");
-//       console.log(isEvenNum(0), "is even");
-//
-//
-//       // Write a javascript function that returns true or false as to whether or not a number passed into the function is a whole number.
-//
-//       "use strict"
-//
-//     function isWho1eNumber(num) {
-//           return num === Math.round(num)
-//     }
-//
-//     console.log(isWho1eNumber(88));
-//     console.log(isWho1eNumber(3.14));
-//     console.log(isWho1eNumber("John"));
-//
-//       // Write a JavaScript function that takes in two numbers, and returns the larger value. Assume all inputs are numbers.
-//
-//     function largerOfTwoNums(n1, n2) {
-//         if (n1 >= n2) {
-//             return n1;
-//         } else {
-//             return n2;
-//         }
-//     }
-//
-//     largerOfTwoNums(72, 4);
-//     largerOfTwoNums(4, 44);
-//     largerOfTwoNums(12, 5);
-//
-//
-//     //Array of favorite tv shows using forEach
-//
-//     var favoriteShows = ['top gear', 'river monster', 'earth', 'pimp my ride'];
-//     favoriteShows.forEach(function(show) {
-//        console.log(show);
-//     });
-//
-// //       Write a function that prints the numbers from 1 to 100
-// //       For numbers divisible by 3, print “Fizz”
-// // For numbers divisible by 5, print “Buzz”
-// // For numbers divisible by both 3 and 5, print “FizzBuzz”
-//
-//     function fizzBuzz() {
-//         for (var i = 1; i <= 50; i++) {
-//             if (i % 3 === 0 && i % === 5) {
-//                 console.log("FizzBuzz");
-//             } else if (x % 3 === 0) {
-//                 console.log("Fizz");
-//             } else if (i % 5 === 0) {
-//                 console.log("Buzz");
-//             } else {
-//                 console.log(i);
-//             }
-//         }
-//     }
-//
-//       // Create a function that takes in a array input and returns true if one of the elements is a number that matches the number of total elements in the array.
-//       // Example input: [1]
-//       // Example output: true
-//       // Example input: ['bob', 3, false]
-//       // Example output: true
-//       // Example input: [{'a': 'hello'}, 10, true]
-//       // Example output: false
-//       // Example input: [5, {'a': 'hello'}, 30, true, null]
-//       // Example output: true
-//
-//     function checkForLengthInArray(arr) {
-//         for (var i = 0;i < arr.length; i+=1) {
-//             if (arr[1] === arr.length) {
-//                 return true;
-//             }
-//         }
-//         return false;
-//     }
-//
-//     console.log(checkForLengthInArray([1]));//true
-//     console.log(checkForLengthInArray(['bob', 3, false]));//true
-//     console.log(checkForLengthInArray([{'a': 'hello'}, 10, true]));//false
-//     console.log(checkForLengthInArray([5, {'a': 'hello'}, 30, true, null]));//true
+    "use strict";
 
-      // Write a javascript function that takes in a number and returns the number raised to the power of four. If any argument is passed into the function that is not a number, return false.
-      // function raisedByPowerOfFour(num) {
-      //     if (!isNaN(num)) {
-      //         return num ** 4;
-      //         // return Math.pow(num, 4);
-      //     } else {
-      //         return false;
-      //     }
-      // }
+    //     function isAtLeastEightLong(str) {
+    //             if (str.length >= 8) {
+    //                 return true;
+    //             } else {
+    //                 return false;
+    //             }
+    //              return str.length >= 8;
+    //     }
+    //
+    //     console.log(isAtLeastEightLong("cat")); // false
+    //     console.log(isAtLeastEightLong("michael")); // true
+    //
+    //
+    //       // Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two.
+    //       //     Examples:
+    //       // twoMoreAwayFromZero(2) will return 4
+    //       // twoMoreAwayFromZero(0) will return 2
+    //       // twoMoreAwayFromZero(0.5) will return 2.5
+    //       // twoMoreAwayFromZero(-2) will return -4
+    //       // twoMoreAwayFromZero(-3.5) will return -5.5
+    //
+    //    "use strict";
+    //
+    //       function twoMoreAwayFromZero(num) {
+    //           if (num >= 0) {
+    //               return num + 2;
+    //           } else {
+    //               return num - 2;
+    //           }
+    //       }
+    //
+    //       console.log(twoMoreAwayFromZero(2)); //will return 4
+    //       console.log(twoMoreAwayFromZero(0)); //will return 2
+    //       console.log(twoMoreAwayFromZero(0.5)); //will return 2.5
+    //       console.log(twoMoreAwayFromZero(-2)); //will return -4
+    //       console.log(twoMoreAwayFromZero(-3.5)); //will return -5.5
+    //
+    //
+    //       // Write a function that returns the quotient of two numbers (Assume the arguments will be numbers)
+    //     "use strict";
+    //
+    //     function quotient(num1, num2) {
+    //             return num1 / num2;
+    //         }
+    //
+    //       console.log(quotient())
+    //       console.log(quotient())
+    //       console.log(quotient())
+    //       console.log(quotient())
+    //
+    //
+    //       // Write a JavaScript function that returns the number 7
+    //
+    //     "use strict"
+    //
+    //     function theNumberSeven() {
+    //         return 7;
+    //     }
+    //
+    //       console.log((theNumberSeven()))
+    //
+    //       // Write a JavaScript function that takes in an argument, and will return the boolean true if the argument is an even number, and false for all other arguments.
+    //
+    //     "use strict"
+    //
+    //     function isEvenNum(parameter){
+    //         if(parameter % 2 === 0) {
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //         return parameter % 2 === 0;
+    //     }
+    //
+    //     console.log(isEvenNum(4), true);
+    //     console.log(isEvenNum(77), false);
+    //
+    //
+    //       // Write a function, returnEvenOddMessage, that takes in a number input and returns the string "is even" if the number input is even and returns the string "is odd" if the number input is odd.
+    //
+    //     "use strict"
+    //
+    //     function returnEvenOddMessage(num) {
+    //         if (isEvenNum(num)){
+    //             return "is even";
+    //         } else {
+    //             return "is odd";
+    //         }
+    //     }
+    //
+    //       console.log(isEvenNum(4), "is even");
+    //       console.log(isEvenNum(77), "is odd");
+    //       console.log(isEvenNum(0), "is even");
+    //
+    //
+    //       // Write a javascript function that returns true or false as to whether or not a number passed into the function is a whole number.
+    //
+    //       "use strict"
+    //
+    //     function isWho1eNumber(num) {
+    //           return num === Math.round(num)
+    //     }
+    //
+    //     console.log(isWho1eNumber(88));
+    //     console.log(isWho1eNumber(3.14));
+    //     console.log(isWho1eNumber("John"));
+    //
+    //       // Write a JavaScript function that takes in two numbers, and returns the larger value. Assume all inputs are numbers.
+    //
+    //     function largerOfTwoNums(n1, n2) {
+    //         if (n1 >= n2) {
+    //             return n1;
+    //         } else {
+    //             return n2;
+    //         }
+    //     }
+    //
+    //     largerOfTwoNums(72, 4);
+    //     largerOfTwoNums(4, 44);
+    //     largerOfTwoNums(12, 5);
+    //
+    //
+    //     //Array of favorite tv shows using forEach
+    //
+    //     var favoriteShows = ['top gear', 'river monster', 'earth', 'pimp my ride'];
+    //     favoriteShows.forEach(function(show) {
+    //        console.log(show);
+    //     });
+    //
+    // //       Write a function that prints the numbers from 1 to 100
+    // //       For numbers divisible by 3, print “Fizz”
+    // // For numbers divisible by 5, print “Buzz”
+    // // For numbers divisible by both 3 and 5, print “FizzBuzz”
+    //
+    //     function fizzBuzz() {
+    //         for (var i = 1; i <= 50; i++) {
+    //             if (i % 3 === 0 && i % === 5) {
+    //                 console.log("FizzBuzz");
+    //             } else if (x % 3 === 0) {
+    //                 console.log("Fizz");
+    //             } else if (i % 5 === 0) {
+    //                 console.log("Buzz");
+    //             } else {
+    //                 console.log(i);
+    //             }
+    //         }
+    //     }
+    //
+    //       // Create a function that takes in a array input and returns true if one of the elements is a number that matches the number of total elements in the array.
+    //       // Example input: [1]
+    //       // Example output: true
+    //       // Example input: ['bob', 3, false]
+    //       // Example output: true
+    //       // Example input: [{'a': 'hello'}, 10, true]
+    //       // Example output: false
+    //       // Example input: [5, {'a': 'hello'}, 30, true, null]
+    //       // Example output: true
+    //
+    //     function checkForLengthInArray(arr) {
+    //         for (var i = 0;i < arr.length; i+=1) {
+    //             if (arr[1] === arr.length) {
+    //                 return true;
+    //             }
+    //         }
+    //         return false;
+    //     }
+    //
+    //     console.log(checkForLengthInArray([1]));//true
+    //     console.log(checkForLengthInArray(['bob', 3, false]));//true
+    //     console.log(checkForLengthInArray([{'a': 'hello'}, 10, true]));//false
+    //     console.log(checkForLengthInArray([5, {'a': 'hello'}, 30, true, null]));//true
+
+    // Write a javascript function that takes in a number and returns the number raised to the power of four. If any argument is passed into the function that is not a number, return false.
+    // function raisedByPowerOfFour(num) {
+    //     if (!isNaN(num)) {
+    //         return num ** 4;
+    //         // return Math.pow(num, 4);
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
 
-      //Write a JavaScript function that takes in a string and returns the number of words in the string (Numbers within a string should be counted as a word). If the function is ever passed an argument that is not a string, return the number 0
-    function numOfWords(str) {
-        if (typeof str === "string"){
-            return str.split(" ").length;
-        } else {
-            return 0;
+    //Write a JavaScript function that takes in a string and returns the number of words in the string (Numbers within a string should be counted as a word). If the function is ever passed an argument that is not a string, return the number 0
+    // function numOfWords(str) {
+    //     if (typeof str === "string"){
+    //         return str.split(" ").length;
+    //     } else {
+    //         return 0;
+    //     }
+    // }
+    //
+    //   console.log(numOfWords('an array of words'));
+
+
+    // Given the following array of objects, write a function in JavaScript that returns an array of objects where each hamster has a heightInMM greater than 85.
+
+    var hamsters = [
+        {
+            name: "Hamtaro",
+            heightInMM: 86,
+            fur: ['orange', 'white'],
+            gender: "male",
+            dateOfBirth: "August 6"
+        }, {
+            name: "Bijou",
+            heightInMM: 75,
+            fur: ['white'],
+            gender: "female",
+            dateOfBirth: "July 10"
+        }, {
+            name: "Oxnard",
+            heightInMM: 100,
+            fur: ['grey', 'white'],
+            gender: "male",
+            dateOfBirth: "May 3"
+        }, {
+            name: "Boss",
+            heightInMM: 120,
+            fur: ['black', 'cream'],
+            gender: "male",
+            dateOfBirth: "Spetember 21"
+        }, {
+            name: "Snoozer",
+            heightInMM: 85,
+            fur: ['brown', 'white'],
+            gender: "male",
+            dateOfBirth: "January 14"
         }
-    }
+    ];
 
-      console.log(numOfWords('an array of words'));
+    const getTallHam = (arr) => arr.filter(hamsters => hamsters.heightInMM > 85);
+
+    console.log(getTallHam(hamsters));
 
 </script>
 </body>
